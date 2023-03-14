@@ -1,0 +1,236 @@
+$color_1: #fff;
+$color_2: #ace3f5;
+$color_3: rgba(255, 255, 255, 0.785);
+$color_4: #fcb053;
+$color_5: #000000;
+$color_6: #000;
+$color_7: #474744;
+$background-color_1: #00000080;
+
+@keyframes bounce {
+	0% {
+		-webkit-transform: translateY(-45px);
+		transform: translateY(-45px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+		opacity: 1;
+	}
+	24% {
+		opacity: 1;
+	}
+	40% {
+		-webkit-transform: translateY(-24px);
+		transform: translateY(-24px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	65% {
+		-webkit-transform: translateY(-12px);
+		transform: translateY(-12px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	82% {
+		-webkit-transform: translateY(-6px);
+		transform: translateY(-6px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	93% {
+		-webkit-transform: translateY(-4px);
+		transform: translateY(-4px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+	25%,55%,75%,87% {
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+	100% {
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+		opacity: 1;
+	}
+}
+@keyframes expand {
+	0% {
+		letter-spacing: -0.1em;
+		opacity: 1;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		letter-spacing: .5rem;
+		opacity: 0.4;
+	}
+}
+.App {
+	margin: 0 auto;
+	max-width: 100vw;
+	height: 100vh;
+	color: $color_1;
+	&::before {
+		content: "";
+		background: url(./assets/back.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+}
+.container {
+	max-width: 1024px;
+	margin-inline: auto;
+	padding-top: 2rem;
+	padding-inline: 1rem;
+	position: relative;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.searchField {
+	display: flex;
+	padding: 0.5rem 0;
+	height: 5rem;
+	width: 200px;
+	flex-direction: column;
+	padding-top: 24px;
+	margin: 0 auto;
+	align-items: center;
+	.searchInput {
+		border: none;
+		background: #0000001f;
+		outline: solid 1px #ebfaff65;
+		border-radius: 25px;
+		padding: 0.8rem;
+		text-align: center;
+		color: $color_1;
+		font-size: 16px;
+		z-index: 1;
+	}
+}
+.searchInput {
+	&:focus {
+		outline: solid 2px #4297b2;
+		+ {
+			.App {
+				&::before {
+					opacity: .7;
+				}
+			}
+		}
+		~ {
+			.overlay {
+				display: block;
+			}
+		}
+	}
+	&::placeholder {
+		color: $color_2;
+		font-size: 1rem;
+	}
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #333;
+	opacity: .5;
+	display: none;
+}
+.desc {
+	text-align: right;
+}
+.bottom {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	width: 100%;
+	margin: 1rem auto;
+	padding: 1rem;
+	border-radius: 8px;
+	background-color: $background-color_1;
+	color: $color_3;
+}
+.txt-label {
+	font-size: 2rem;
+	font-weight: lighter;
+}
+.cool {
+	color: $color_2;
+}
+.normal {
+	color: $color_1;
+}
+.hot {
+	color: $color_4;
+}
+.bold {
+	font-weight: bold;
+	font-size: 18px;
+}
+.error {
+	color: $color_5;
+	text-transform: capitalize;
+}
+.location {
+	display: inline-flex;
+	gap: 1rem;
+	font-weight: lighter;
+}
+.tooltip {
+	font-size: 18px !important;
+	font-weight: bold !important;
+	background: rgb(176, 240, 252) !important;
+	color: $color_6 !important;
+}
+.d-f-j {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 0.5rem;
+}
+.d-f-r {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	align-items: baseline;
+	&:hover {
+		color: $color_7;
+		opacity: 0.5;
+	}
+}
+.temp {
+	display: flex;
+	justify-content: space-between;
+}
+.px-2 {
+	padding-left: 2rem;
+}
+.w-icon {
+	-webkit-animation: bounce 1s .5s both;
+	animation: bounce 1s .5s both;
+}
+.xyz {
+	display: flex;
+	justify-content: center;
+	margin-block: auto;
+	font-size: 2rem;
+}
+.ani-text {
+	-webkit-animation: expand 3s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite alternate-reverse both;
+	animation: expand 3s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite alternate-reverse both;
+}

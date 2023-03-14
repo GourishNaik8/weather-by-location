@@ -1,0 +1,39 @@
+{
+  "coord": { "lon": 78.0425, "lat": 15.8309 },
+  "weather": [
+    { 
+      "id": 801, 
+      "main": "Clouds", 
+      "description": "few clouds", 
+      "icon": "02d" 
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 302.8,
+    "feels_like": 302.05,
+    "temp_min": 302.8,
+    "temp_max": 302.8,
+    "pressure": 1009,
+    "humidity": 36,
+    "sea_level": 1009,
+    "grnd_level": 978
+  },
+  "visibility": 10000,
+  "wind": { 
+    "speed": 3.19, 
+    "deg": 33, 
+    "gust": 2.79 
+  },
+  "clouds": { "all": 13 },
+  "dt": 1667208796,
+  "sys": { 
+    "country": "IN", 
+    "sunrise": 1667177043, 
+    "sunset": 1667218722 
+  },
+  "timezone": 19800,
+  "id": 1279074,
+  "name": "Kurnool",
+  "cod": 200
+}
